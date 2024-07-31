@@ -1,6 +1,6 @@
 <template>
   <!-- On vient afficher le nom de l'user dans le h1 -->
-  <h1>Bonjour {{ state.user.name }}</h1>
+  <h1>Bonjour {{ user.name }}</h1>
   <h2>Count : {{ state.count }}</h2>
   <!-- on the flight -->
   <!-- <button @click="state.count++">Add</button> -->
@@ -21,6 +21,7 @@
     count: 0
   });
 
+  const { user, count } = state;
   // la fonction viens incrémenter le count
   function addCount() {
     state.count++;
