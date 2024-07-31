@@ -2,11 +2,11 @@
   <!-- On vient afficher le nom de l'user dans le h1 -->
   <h1>Bonjour {{ state.user.name }}</h1>
   <h2>Count : {{ state.count }}</h2>
+  <button @click="state.count++">Add</button>
 </template>
 
 <script lang="ts" setup>
   // import { count } from 'console';
-  import { stat } from 'fs';
   import { reactive } from 'vue';
 
   // on déclare un objet user
@@ -27,9 +27,9 @@
     state.user.name = 'Leo';
   }, 2000);
 
-  setInterval(() => {
-    state.count++;
-  }, 1000);
+  // setInterval(() => {
+  //   state.count++;
+  // }, 1000);
 </script>
 
 <style></style>
