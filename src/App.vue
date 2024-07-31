@@ -4,23 +4,20 @@
   <h2>Count : {{ state.count }}</h2>
   <!-- on the flight -->
   <!-- <button @click="state.count++">Add</button> -->
-   <!-- en utilisant une fonction -->
+  <!-- en utilisant une fonction -->
   <button @click="addCount">Add</button>
 </template>
 
 <script lang="ts" setup>
-  // import { count } from 'console';
   import { reactive } from 'vue';
-
-  // on déclare un objet user
-  const user = {
-    name: 'Tintin',
-    age: 15
-  };
 
   //on rends cette objet reactive en le passant à la fonction reactive()
   const state = reactive({
-    user,
+    // on déclare un objet user directement dans la fonction reactive
+    user: {
+      name: 'Tintin',
+      age: 15
+    },
     count: 0
   });
 
@@ -34,7 +31,6 @@
   setTimeout(() => {
     state.user.name = 'Leo';
   }, 2000);
-
 </script>
 
 <style></style>
