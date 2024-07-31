@@ -2,7 +2,10 @@
   <!-- On vient afficher le nom de l'user dans le h1 -->
   <h1>Bonjour {{ state.user.name }}</h1>
   <h2>Count : {{ state.count }}</h2>
-  <button @click="state.count++">Add</button>
+  <!-- on the flight -->
+  <!-- <button @click="state.count++">Add</button> -->
+   <!-- en utilisant une fonction -->
+  <button @click="addCount">Add</button>
 </template>
 
 <script lang="ts" setup>
@@ -21,15 +24,17 @@
     count: 0
   });
 
+  // la fonction viens incrémenter le count
+  function addCount() {
+    state.count++;
+  }
+
   // au bout de 2s on vient modifier la valeur name de l'objet user
   // on viens rendre de nouveau le template pour afficher la mise à jour
   setTimeout(() => {
     state.user.name = 'Leo';
   }, 2000);
 
-  // setInterval(() => {
-  //   state.count++;
-  // }, 1000);
 </script>
 
 <style></style>
