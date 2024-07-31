@@ -1,7 +1,7 @@
 <template>
-  <h1>Bonjour {{ name }}</h1>
+  <h1 v-bind:class="h1title">Bonjour</h1>
 </template>
 <script lang="ts" setup>
-  const name = 'Jean';
+  const h1title = 'monTitre';
 </script>
 <style></style>
