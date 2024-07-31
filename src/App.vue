@@ -21,7 +21,7 @@
     count: 0
   });
 
-  const { user, count } = state;
+  const { user } = state;
   // la fonction viens incrémenter le count
   function addCount() {
     state.count++;
