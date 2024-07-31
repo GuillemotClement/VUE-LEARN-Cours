@@ -1,19 +1,28 @@
 <template>
-  <h1 v-on:click="userClick">Hello</h1>
-  <input type="text" @input="userInput" />
+  <!-- On vient afficher le nom de l'user dans le h1 -->
+  <h1>Bonjour {{ state.user.name }}</h1>
 </template>
 
 <script lang="ts" setup>
-  function userClick(event: MouseEvent) {
-    console.log(event);
-  }
+  import { reactive } from 'vue';
 
-  function userInput(event: Event) {
-    // on viens préciser qu'on utilise un élément input
-    //cela améliorer l'autocomplétion
-    const target = event.target as HTMLInputElement;
-    console.log(target.value);
-  }
+  // on déclare un objet user
+  const user = {
+    name: 'Tintin',
+    age: 15
+  };
+
+  //on rends cette objet reactive en le passant à la fonction reactive()
+  const state = reactive({
+    user
+  });
+
+  // au bout de 2s on vient modifier la valeur name de l'objet user
+  // on viens rendre de nouveau le template pour afficher la mise à jour
+  setTimeout(() => {
+    state.user.name = 'Leo';
+  }, 2000);
+
 </script>
 
 <style></style>
