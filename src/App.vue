@@ -1,10 +1,10 @@
 <template>
-  <h2>Prix total HT : {{ totalPriceHT() }}</h2>
-  <h2>Prix total TTC : {{ totalPriceTTC() }}</h2>
+  <h2>Prix total HT : {{ totalPriceHT }}</h2>
+  <h2>Prix total TTC : {{ totalPriceTTC }}</h2>
 </template>
 
 <script lang="ts" setup>
-  import { reactive, ref } from 'vue';
+  import { reactive, computed } from 'vue';
 
   const product = reactive({
     name: 'books',
@@ -12,13 +12,13 @@
     priceHT: 10
   });
 
-  const totalPriceHT = () => {
+  const totalPriceHT = computed(() => {
     return product.priceHT * product.quantity;
-  };
+  });
 
-  const totalPriceTTC = () => {
+  const totalPriceTTC = computed(() => {
     return product.priceHT * product.quantity * 1.2;
-  };
+  });
 </script>
 
 <style></style>
