@@ -1,19 +1,18 @@
 <template>
-  <h1
-    :style="{
-      fontSize: fontSize + 'px'
-    }"
-  >
-    Hello
-  </h1>
-  <button @click="fontSize += 5">+</button>
-  <button @click="fontSize -= 5">-</button>
+  <div class="">
+    <h1>Hello</h1>
+    <p>Blabla</p>
+  </div>
 </template>
 
 <script lang="ts" setup>
-  import { ref } from 'vue';
-
-  const fontSize = ref(15);
+  // Installation sass : npm install -D sass
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+  div {
+    h1 {
+      color: red;
+    }
+  }
+</style>
