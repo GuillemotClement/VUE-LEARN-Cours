@@ -36,7 +36,8 @@
   // on déclare la constate pour la gestion d'erreur
   // dans la fonction de rappel on définis les règle qui permette d'ajouter la classe
   // si la valeur saisie est inférieur à 5 alors on applique la bordure rouge
-  const inputError = computed(() => touched.value && input.value.length < 5);
+  // on vérifie également que l'on as pas le focus pour déclencher la classe erreur
+  const inputError = computed(() => touched.value && input.value.length < 5 && !focus.value);
 </script>
 
 <style scoped>
