@@ -1,15 +1,24 @@
 <template>
-  <!-- on lui passe la référence -->
-  <input type="text" v-model="text" />
-  <!-- on affichage la valeur saisis par l'user -->
-  <h1>{{ text }}</h1>
+  <input type="number" v-model="product.quantity" />
+  <h2>Prix total HT : {{ totalPriceHT }}</h2>
+  <h2>Prix total TTC : {{ totalPriceTTC }}</h2>
 </template>
 
 <script lang="ts" setup>
-  import { ref } from 'vue';
+  import { reactive, computed } from 'vue';
 
-  // création de la référence initialiser avec une chaîne vide.
-  const text = ref('');
+  const product = reactive({
+    name: 'books',
+    quantity: 3,
+    priceHT: 10
+  });
+
+  const totalPriceHT = computed(() => {
+    return product.priceHT * product.quantity;
+  });
+  const totalPriceTTC = computed(() => {
+    return product.priceHT * product.quantity * 1.2;
+  });
 </script>
 
 <style></style>
