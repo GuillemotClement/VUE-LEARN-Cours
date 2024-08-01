@@ -51,6 +51,8 @@
   );
 
   watchEffect(() => {
+    //on créer une dépendance
+    product.priceHT = price.value;
     // on viens exécuter directement la fonction
     // Date.now() retourne le timestamps du moment ou la méthode est invoqué
     product.lastModification = Date.now();
