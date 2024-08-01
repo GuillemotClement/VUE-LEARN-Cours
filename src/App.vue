@@ -5,7 +5,8 @@
       // si l'user saiais quelque chose on ajoute la classe
       // on utilise la notation raccourcie
       inputOnGoing,
-      inputError
+      inputError,
+      inputValid
     }"
     @focus="focus = true"
     @blur="focus = false"
@@ -38,6 +39,10 @@
   // si la valeur saisie est inférieur à 5 alors on applique la bordure rouge
   // on vérifie également que l'on as pas le focus pour déclencher la classe erreur
   const inputError = computed(() => touched.value && input.value.length < 5 && !focus.value);
+
+  //gestion si l'input est valide
+  // on vérifie qu'il n'y a pas d'erreur avec !inputError.value
+  const inputValid = computed(() => touched.value && !inputError.value && !focus.value);
 </script>
 
 <style scoped>
@@ -53,5 +58,9 @@
 
   .inputError {
     border-color: red;
+  }
+
+  .inputValid {
+    border-color: green;
   }
 </style>
