@@ -1,19 +1,14 @@
 <template>
-  <h1
-    :style="{
-      fontSize,
-      color
-    }"
-  >
-    Hello
-  </h1>
+  <h1 :style="h1Style">Hello</h1>
 </template>
 
 <script lang="ts" setup>
-  import { ref } from 'vue';
+  import { reactive, ref } from 'vue';
 
-  const fontSize = ref('130px');
-  const color = ref('red');
+  const h1Style = reactive({
+    fontSize: '90px',
+    color: 'red'
+  });
 </script>
 
 <style scoped></style>
