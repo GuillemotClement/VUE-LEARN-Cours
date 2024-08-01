@@ -1,18 +1,12 @@
 <template>
-  <div class="">
-    <h1>Hello</h1>
-    <p>Blabla</p>
-  </div>
+  <button @click="myVal = !myVal">Afficher</button>
+  <h1 v-if="myVal">Hello</h1>
 </template>
 
 <script lang="ts" setup>
-  // Installation sass : npm install -D sass
+  import { ref } from 'vue';
+
+  const myVal = ref(true);
 </script>
 
-<style scoped lang="scss">
-  div {
-    h1 {
-      color: red;
-    }
-  }
-</style>
+<style scoped lang="scss"></style>
