@@ -3,7 +3,9 @@
     type="text"
     :class="{
       // si l'user saiais quelque chose on ajoute la classe
-      inputOnGoing: inputOnGoing
+      // on utilise la notation raccourcie
+      inputOnGoing,
+      inputError
     }"
     @focus="focus = true"
     @blur="focus = false"
@@ -24,6 +26,11 @@
   // si il y a quelque chsose dans le input alors retourne true
   // on ajoute également si focus est true pour ajouter la classe
   const inputOnGoing = computed(() => focus.value && input.value.length);
+
+  // on déclare la constate pour la gestion d'erreur
+  // dans la fonction de rappel on définis les règle qui permette d'ajouter la classe
+  // si la valeur saisie est inférieur à 5 alors on applique la bordure rouge
+  const inputError = computed(() => input.value.length < 5);
 </script>
 
 <style scoped>
@@ -35,5 +42,9 @@
 
   .inputOnGoing {
     border-color: blue;
+  }
+
+  .inputError {
+    border-color: red;
   }
 </style>
