@@ -1,6 +1,6 @@
 <template>
-  <h2>Prix total HT : {{ totalPriceHT }}</h2>
-  <h2>Prix total TTC : {{ totalPricTTC }}</h2>
+  <h2>Prix total HT : {{ totalPriceHT() }}</h2>
+  <h2>Prix total TTC : {{ totalPriceTTC() }}</h2>
 </template>
 
 <script lang="ts" setup>
@@ -12,8 +12,13 @@
     priceHT: 10
   });
 
-  const totalPriceHT = product.priceHT * product.quantity;
-  const totalPricTTC = product.priceHT * product.quantity * 1.2;
+  const totalPriceHT = () => {
+    return product.priceHT * product.quantity;
+  };
+
+  const totalPriceTTC = () => {
+    return product.priceHT * product.quantity * 1.2;
+  };
 </script>
 
 <style></style>
