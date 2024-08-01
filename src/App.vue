@@ -1,26 +1,16 @@
 <template>
-  <!-- on affiche la liste que si on as récupérer les éléments -->
-  <h1>Profil</h1>
-  <!-- avec le v-if, on affiche les éléments une fois récupéré -->
-  <ul v-if="state.user">
-    <!-- on viens protéger avec le ? -->
-    <li>Name : {{ state.user?.name }}</li>
-    <li>Age : {{ state.user?.age }}</li>
-  </ul>
-  <h2 v-else>Chargement des données en cours ...</h2>
+  <input type="text" v-model="letter" />
+
+  <h1 v-if="letter === 'A'">A</h1>
+  <h1 v-else-if="letter === 'B'">B</h1>
+  <h1 v-else-if="letter === 'C'">C</h1>
+  <h1 v-else>Autre</h1>
 </template>
 
 <script lang="ts" setup>
-  import { reactive } from 'vue';
+  import { ref } from 'vue';
 
-  const state = reactive<any>({});
-
-  setTimeout(() => {
-    state.user = {
-      name: 'Jean',
-      age: 17
-    };
-  }, 3000);
+  const letter = ref('');
 </script>
 
 <style scoped lang="scss"></style>
