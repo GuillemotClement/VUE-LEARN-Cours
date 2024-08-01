@@ -7,6 +7,7 @@
     <li>Name : {{ state.user?.name }}</li>
     <li>Age : {{ state.user?.age }}</li>
   </ul>
+  <h2 v-else>Chargement des données en cours ...</h2>
 </template>
 
 <script lang="ts" setup>
