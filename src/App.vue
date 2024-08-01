@@ -5,7 +5,5 @@
 <script lang="ts" setup></script>
 
 <style scoped>
-  h1 {
-    color: red;
-  }
+  @import './assets/base.css';
 </style>
