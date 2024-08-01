@@ -1,20 +1,19 @@
-<template></template>
+<template>
+  <h2>Prix total HT : {{ totalPriceHT }}</h2>
+  <h2>Prix total TTC : {{ totalPricTTC }}</h2>
+</template>
 
 <script lang="ts" setup>
-  //on importe la fonction ref()
-  import { ref } from 'vue';
-  // permet d'importer des types
-  import type { Ref } from 'vue';
+  import { reactive, ref } from 'vue';
 
-  const count = ref(0);
+  const product = reactive({
+    name: 'books',
+    quantity: 3,
+    priceHT: 10
+  });
 
-
-  // cette fonction récupère une référence en paramètre
-  function getRef(num: Ref<number>) {
-    num.value++
-  }
-
-  getRef(count);
+  const totalPriceHT = product.priceHT * product.quantity;
+  const totalPricTTC = product.priceHT * product.quantity * 1.2;
 </script>
 
 <style></style>
