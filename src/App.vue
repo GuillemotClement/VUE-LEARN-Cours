@@ -1,19 +1,20 @@
-<template>
-  <h2>Count : {{ count }}</h2>
-  <button @click="addCount">Add</button>
-</template>
+<template></template>
 
 <script lang="ts" setup>
-  //on importe la fonction ref() 
+  //on importe la fonction ref()
   import { ref } from 'vue';
+  // permet d'importer des types
+  import type { Ref } from 'vue';
 
-  //on délcare une nouvelle variable et on rend reactif la valeur avec ref()
   const count = ref(0);
 
-  // la fonction viens incrémenter le count
-  function addCount() {
-    count.value++;
+
+  // cette fonction récupère une référence en paramètre
+  function getRef(num: Ref<number>) {
+    num.value++
   }
+
+  getRef(count);
 </script>
 
 <style></style>
