@@ -1,16 +1,23 @@
 <template>
-  <input type="text" v-model="letter" />
-
-  <h1 v-if="letter === 'A'">A</h1>
-  <h1 v-else-if="letter === 'B'">B</h1>
-  <h1 v-else-if="letter === 'C'">C</h1>
-  <h1 v-else>Autre</h1>
+  <ul>
+    <li v-for="(fruit, index) of fruits">Name: {{ fruit }} à l'index {{ index }}</li>
+  </ul>
+  <ul>
+    <li v-for="{ name, grades } of users">
+      {{ name }} :<span v-for="grade in grades">{{ grade }}, </span>
+    </li>
+  </ul>
 </template>
 
 <script lang="ts" setup>
-  import { ref } from 'vue';
-
-  const letter = ref('');
+  import { reactive } from 'vue';
+  const fruits = reactive(['Fraises', 'Banane', 'Orange']);
+  const users = reactive([
+    { name: 'Jean', grades: [12, 13, 15] },
+    { name: 'Emma', grades: [12, 13, 15] },
+    { name: 'Eric', grades: [12, 13, 15] },
+    { name: 'Eva', grades: [12, 13, 15] }
+  ]);
 </script>
 
 <style scoped lang="scss"></style>
