@@ -1,23 +1,15 @@
 <template>
   <ul>
-    <li v-for="(fruit, index) of fruits">Name: {{ fruit }} à l'index {{ index }}</li>
-  </ul>
-  <ul>
-    <li v-for="{ name, grades } of users">
-      {{ name }} :<span v-for="grade in grades">{{ grade }}, </span>
-    </li>
+    <li v-for="(value, key) of car">{{ key }} : {{ value }}</li>
   </ul>
 </template>
 
 <script lang="ts" setup>
   import { reactive } from 'vue';
-  const fruits = reactive(['Fraises', 'Banane', 'Orange']);
-  const users = reactive([
-    { name: 'Jean', grades: [12, 13, 15] },
-    { name: 'Emma', grades: [12, 13, 15] },
-    { name: 'Eric', grades: [12, 13, 15] },
-    { name: 'Eva', grades: [12, 13, 15] }
-  ]);
+  const car = {
+    wheel: 4,
+    price: 4000
+  };
 </script>
 
 <style scoped lang="scss"></style>
