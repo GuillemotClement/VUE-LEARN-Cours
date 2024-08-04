@@ -4,6 +4,7 @@
 
 <script lang="ts" setup>
   import Product from './components/Product.vue';
+  import { ref } from 'vue';
 
   const product = ref('Voiture');
 </script>
