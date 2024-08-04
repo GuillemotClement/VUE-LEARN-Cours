@@ -4,8 +4,6 @@
   <Product />
 </template>
 
-<script lang="ts" setup>
-  import Product from './components/Product.vue';
-</script>
+<script lang="ts" setup></script>
 
 <style scoped lang="scss"></style>
