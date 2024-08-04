@@ -1,11 +1,13 @@
 <template>
-  <h3>{{ name }}</h3>
+  <h3>{{ title }}</h3>
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue';
+  import { computed } from 'vue';
 
-  defineProps(['name']);
+  const props = defineProps(['name']);
+
+  const title = computed(() => props.name.toUpperCase());
 </script>
 
 <style lang="scss" scoped></style>
