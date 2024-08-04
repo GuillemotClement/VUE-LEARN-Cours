@@ -6,7 +6,10 @@
   import { computed } from 'vue';
 
   const props = defineProps({
-    name: String
+    name: {
+      type: String,
+      required: true
+    }
   });
 
   const title = computed(() => props.name.toUpperCase());
