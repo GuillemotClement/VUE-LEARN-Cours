@@ -1,18 +1,11 @@
 <template>
-  <h3>Voiture</h3>
-  <ul>
-    <li>Prix : 10 000$</li>
-    <li>Roues : 4</li>
-    <li>Places : 5</li>
-  </ul>
-  <button @click="count++">Acheter</button>
-  <p>Vous avez acheter {{ count }} voitures</p>
+  <Product />
+  <Product />
+  <Product />
 </template>
 
 <script lang="ts" setup>
-  import { ref } from 'vue';
-
-  const count = ref(0);
+  import Product from './components/Product.vue';
 </script>
 
 <style scoped lang="scss"></style>
