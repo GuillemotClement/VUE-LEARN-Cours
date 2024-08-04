@@ -1,11 +1,15 @@
 <template>
-  <ul>
-    <li v-for="n in 10">Bonjour</li>
-  </ul>
+  <div v-memo="[title]">
+    <h1>{{ title }}</h1>
+    <p></p>
+    <p></p>
+  </div>
 </template>
 
 <script lang="ts" setup>
-  // import { reactive } from 'vue';
+  import { reactive, ref } from 'vue';
+
+  const title = ref('Ma super app');
 </script>
 
 <style scoped lang="scss"></style>
