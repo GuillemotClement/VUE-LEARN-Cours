@@ -1,15 +1,18 @@
 <template>
-  <div v-memo="[title]">
-    <h1>{{ title }}</h1>
-    <p></p>
-    <p></p>
-  </div>
+  <h3>Voiture</h3>
+  <ul>
+    <li>Prix : 10 000$</li>
+    <li>Roues : 4</li>
+    <li>Places : 5</li>
+  </ul>
+  <button @click="count++">Acheter</button>
+  <p>Vous avez acheter {{ count }} voitures</p>
 </template>
 
 <script lang="ts" setup>
-  import { reactive, ref } from 'vue';
+  import { ref } from 'vue';
 
-  const title = ref('Ma super app');
+  const count = ref(0);
 </script>
 
 <style scoped lang="scss"></style>
