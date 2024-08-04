@@ -1,5 +1,6 @@
 <template>
   <h3>{{ title }}</h3>
+  <p>Disponible au prix de : {{ prix }}</p>
 </template>
 
 <script setup lang="ts">
@@ -10,6 +11,11 @@
       type: String,
       required: true,
       default: 'Maison'
+    },
+    prix: {
+      type: Number,
+      required: true,
+      default: 0
     }
   });
 
