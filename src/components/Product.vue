@@ -10,7 +10,14 @@
     name: {
       type: String,
       required: true,
-      default: 'Maison'
+      default: 'Maison',
+      validator(value: string): boolean {
+        if (value.length < 10) {
+          return false;
+        } else {
+          return true;
+        }
+      }
     },
     prix: {
       type: Number,
