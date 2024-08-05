@@ -1,5 +1,5 @@
 <template>
-  <button @click="">+</button>
+  <button @click="$emit('bigger')">+</button>
   <p :style="{ fontSize: props.fontSize + 'px' }">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas quisquam id molestiae, vitae
     recusandae ut qui alias nobis repellendus officia. Vero labore in quidem temporibus eaque non.
