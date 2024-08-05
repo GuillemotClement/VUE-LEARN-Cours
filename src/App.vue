@@ -1,17 +1,13 @@
 <template>
-  <Product :product="product" />
+  <Blog :fontSize="fontSize" />
+  <Blog :fontSize="fontSize" />
 </template>
 
 <script lang="ts" setup>
-  import Product from './components/Product.vue';
-  import { ref, reactive } from 'vue';
-  import type { ProductInterface } from './interface/product.interface';
+  import { ref } from 'vue';
+  import Blog from './components/Blog.vue';
 
-  const product = reactive<ProductInterface>({
-    available: true,
-    prix: 1500,
-    name: 'Moto'
-  });
+  const fontSize = ref(16);
 </script>
 
 <style scoped lang="scss"></style>
