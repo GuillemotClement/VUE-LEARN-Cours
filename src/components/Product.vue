@@ -1,6 +1,7 @@
 <template>
   <h3>{{ title }}</h3>
   <p>Disponible au prix de : {{ prix }}</p>
+  <p>Ici le boolean est : {{ available }}</p>
 </template>
 
 <script setup lang="ts">
@@ -23,7 +24,8 @@
       type: Number,
       required: true,
       default: 0
-    }
+    },
+    available: Boolean
   });
 
   const title = computed(() => props.name.toUpperCase());
