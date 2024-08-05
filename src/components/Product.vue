@@ -7,26 +7,11 @@
 <script setup lang="ts">
   import { computed } from 'vue';
 
-  const props = defineProps({
-    name: {
-      type: String,
-      required: true,
-      default: 'Maison',
-      validator(value: string): boolean {
-        if (value.length < 10) {
-          return false;
-        } else {
-          return true;
-        }
-      }
-    },
-    prix: {
-      type: Number,
-      required: true,
-      default: 0
-    },
-    available: Boolean
-  });
+  const props = defineProps<{
+    prix: number;
+    name: string;
+    available: boolean;
+  }>();
 
   const title = computed(() => props.name.toUpperCase());
 </script>
