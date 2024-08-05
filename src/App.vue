@@ -1,6 +1,6 @@
 <template>
-  <Blog :fontSize="fontSize" />
-  <Blog :fontSize="fontSize" />
+  <Blog :fontSize="fontSize" @bigger="fontSize++" />
+  <Blog :fontSize="fontSize" @bigger="fontSize++" />
 </template>
 
 <script lang="ts" setup>
